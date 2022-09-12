@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Javascript 1</title>
+</head>
+
+<body>
+    <script language="javascript">
+
+        var pegawai = "Ridwan";
+        var jabatan = "manager";
+        var status = "menikah";
+        //var status = "menikah";
+
+        //manager = 15 jt
+        //asisten manager = 10 jt
+        //staf = 5 jt
+
+        //Struktur kendali
+
+        if (jabatan == 'manager') {
+            gapok = 15000000;
+        }
+
+        else if (jabatan == 'asistenmanager') {
+            gapok = 10000000;
+        }
+
+        else if (jabatan == 'staff') {
+            gapok = 5000000;
+
+        }
+
+        else {
+            gapok = 0;
+        }
+
+        let tunjab = (15 / 100) * gapok;
+        let bpjs = (10 / 100) * gapok;
+        let tunkel = (20 / 100) * gapok;
+        let totalgaji = gapok + tunjab + bpjs + tunkel;
+
+        let Tunkel = (status == 'menikah') ? tunkel : 0;
+
+       /* if (status == 'menikah') {
+            tunkel;
+
+        }
+        
+        else {
+            tes = tunkel * 0;
+        }
+        */
+
+        document.write("<h2 align = 'center'>Data Personalia Perusahaan </h2>" +
+
+            "<h5 align = 'center'> Pegawai: " + pegawai +
+            "</h5>" +
+            "<h5 align = 'center'> Jabatan: " + jabatan +
+            "</h5>" +
+            "<h5 align = 'center'> Status: " + status+
+            "</h5>"+
+
+            "<table align= 'center' border = '1' border='1' cellpadding='10' cellspacing='0' width = '40%'>" +
+            "<thead>" +
+            "<tr bgcolor='#5DADE2'>" +
+            "<th>Data</th>" +
+            "<th>Keterangan</th>" +
+            "</tr>" +
+            "</thead>" +
+            
+            "<tbody>"+
+
+            "<tr>"+
+            "<td>Gaji Pokok</td>" +
+            "<td>" + gapok +
+            "</td>" +
+            "</tr>" +
+
+            "<tr>"+
+            "<td>Tunjangan jabatan</td>" +
+            "<td>" + tunjab +
+            "</td>" +
+            "</tr>" +
+
+            "<tr>"+
+            "<td>BPJS</td>" +
+            "<td>" + bpjs +
+            "</td>" +
+            "</tr>" +
+
+            "<tr>"+
+            "<td>Tunjangan keluarga</td>" +
+            "<td>" + Tunkel +
+            "</td>" +
+            "</tr>" +
+
+            "<tfoot>" +
+            "<tr bgcolor='#AED6F1'>" +
+            "<th>Total</th>" +
+            "<th>" + totalgaji +
+            "</th>" +
+            "</tr>" +
+            "</tfoot>" +
+        
+            "</tbody>" +
+            "</table>"
+        );
+    </script>
+</body>
+</html>
