@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas JS kompleks versi 2</title>
+</head>
+
+<body>
+    <h3 align="center"> Daftar Anggota Pegawai</h3>
+    <table align="center" bgcolor="blue" with="80%" cellpadding="8">
+        <thead bgcolor="#20CA32">
+            <tr height="20" cellpadding="30">
+                <th>No</th>
+                <th>Nama</th>
+                <th>Jabatan</th>
+                <th>Agama</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>Tunjangan Kesehatan</th>
+                <th>Gaji Kotor</th>
+                <th>Zakat Profesi</th>
+                <th>Take Home Pay</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script language="javascript">
+                var nomor, pegawai, warna, gapok, agama, tunjab, gakot, zakat, takehome, tunkes;
+                for (nomor = 1; nomor <= 100; nomor++) 
+                {
+                    warna = (nomor % 2 == 0) ? 'aqua' : 'yellow';
+                    agama = (nomor % 2 == 0) ? 'NonMuslim' : 'Muslim';
+
+
+                    if (nomor <= 25) {
+                        jabatan = 'manager';
+
+                    }
+                    else if (nomor <= 50) 
+                    {
+                        jabatan = 'asisten manager';
+                    }
+                    else if (nomor <= 75) 
+                    {
+                        jabatan = 'supervisor';
+                    }
+                    else if (nomor <= 100) 
+                    {
+                        jabatan = 'staff';
+                    }
+                    else 
+                    {
+                        document.write('None');
+                    }
+
+
+                    switch (jabatan) 
+                    {
+                        case 'manager': gapok = 15000000;
+                            break;
+                        case 'asisten manager': gapok = 10000000;
+                            break;
+                        case 'supervisor': gapok = 7000000;
+                            break;
+                        case 'staff': gapok = 4000000;
+                    }
+
+                    //perhitungan tunjangan da gaji
+                    tunjab = (20) / 100 * gapok;
+                    tunkes = (10 / 100) * gapok;
+                    gakot = gapok + tunjab + tunkes;
+
+                    //zakat
+                    zakat = (agama == 'Muslim' && gakot >= 7000000) ? 0.025 * gakot : 0;
+
+                    //take a home
+                    takehome = gakot - zakat;
+
+
+
+                    document.write(`
+                <tr bgcolor= '${warna}' align= 'center' cellpadding='10'>
+                    <td>${nomor}</td>
+                    <td>pegawai ke- ${nomor}</td>
+                    <td>${jabatan}</td>
+                    <td>${agama}</td>
+                    <td>${gapok}</td>
+                    <td>${tunjab}</td>
+                    <td>${tunkes}</td>
+                    <td>${gakot}</td>
+                    <td>${zakat}</td>
+                    <td>${takehome}</td>
+                </tr>
+                    `);
+
+                };
+            </script>
+        </tbody>
+    </table>
+</body>
+</html>
