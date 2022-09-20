@@ -5,21 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Tugas 6 javascript</title>
 </head>
 
 <body>
-    <h4 align="center">Gempa di Berbagai Wilayah Indonesia</h4>
-    <table align="center" border="1" cellpadding="10" width="60%">
+    <h5 class="mt-2" align="center">Gempa di Berbagai Wilayah Indonesia</h5>
+    <table class="table mt-4" align="center" style="width: 60%;">
         <thead>
-            <tr bgcolor="tomato">
-                <th>No</th>
-                <th>Lokasi</th>
-                <th>Skala</th>
-                <th>Dampak</th>
+            <tr align="center">
+                <th scope="col">No</th>
+                <th scope="col">Lokasi</th>
+                <th scope="col">Skala</th>
+                <th scope="col">Dampak</th>
             </tr>
         </thead>
         <tbody>
+
             <script>
                 class Gempa {
                     constructor(no, lokasi, skala) {
@@ -39,7 +42,7 @@
                     }
 
                     infoGempa() {
-                    document.write(`
+                        document.write(`
                     <tr align="center">
                         <td> ${this.no} </td>
                         <td>${this.lokasi}</td>
@@ -48,6 +51,7 @@
                     </tr>
                     `);
                     }
+
                 }
                 g1 = new Gempa(1, 'Sumedang', 5);
                 g2 = new Gempa(2, 'Kuningan', 8);
@@ -60,8 +64,8 @@
                 g9 = new Gempa(9, 'Padang', 2.9);
                 g10 = new Gempa(10, 'Yogyakarta', 5.6);
 
-                
-                g1.infoGempa(); 
+
+                g1.infoGempa();
                 g2.infoGempa();
                 g3.infoGempa();
                 g4.infoGempa();
@@ -72,7 +76,6 @@
                 g9.infoGempa();
                 g10.infoGempa();
             </script>
-
         </tbody>
     </table>
 </body>
